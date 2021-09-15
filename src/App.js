@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import Swiper from "swiper";
 // import Birthdays from "./components/Birthdays";
-import Brokers from "./components/Brokers";
+// import Brokers from "./components/Brokers";
 import BusinessDevelopment from "./components/BusinessDevelopment";
 // import PreviousMonthBD from "./components/PreviousMonthBD";
 
