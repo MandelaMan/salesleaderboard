@@ -147,7 +147,7 @@ const App = () => {
                 monthValues={monthValues}
                 topPerson={topPerson}
               /> */}
-              <Brokers />
+              {/* <Brokers /> */}
               {/* <div className="swiper-slide">
                 <Birthdays />
               </div> */}
