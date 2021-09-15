@@ -49,8 +49,8 @@ const BusinessDevelopment = ({
                 </div>
                 <div className="person-data">
                   <h2>
-                    <b>Florence Wanyoike</b>
-                    {/* <b>{topPerson.name}</b> */}
+                    {/* <b>Florence Wanyoike</b> */}
+                    <b>{topPerson.name}</b>
                   </h2>
                 </div>
               </div>
