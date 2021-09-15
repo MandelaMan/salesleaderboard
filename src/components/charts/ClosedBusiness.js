@@ -19,7 +19,7 @@ const ClosedBusiness = ({ monthValues }) => {
     ],
     datasets: [
       {
-        label: "#paid",
+        label: "#Closed business",
         data: monthValues,
         backgroundColor: [
           "rgba(26, 188, 156, 0.4)",
@@ -87,7 +87,7 @@ const ClosedBusiness = ({ monthValues }) => {
 
   return (
     <div className="the-bar-chart">
-      <Bar height={400} data={data} options={options} />
+      <Bar height={500} data={data} options={options} />
     </div>
   );
 };

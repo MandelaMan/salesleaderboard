@@ -49,7 +49,8 @@ const BusinessDevelopment = ({
                 </div>
                 <div className="person-data">
                   <h2>
-                    <b>{topPerson.name}</b>
+                    <b>Florence Wanyoike</b>
+                    {/* <b>{topPerson.name}</b> */}
                   </h2>
                 </div>
               </div>
@@ -125,7 +126,7 @@ const BusinessDevelopment = ({
                         <td width={"45px"}>
                           <ProfilePic picture={s.empID} />
                         </td>
-                        <td style={{ paddingTop: "30px" }} width={"180px"}>
+                        <td style={{ paddingTop: "30px" }} width={"200px"}>
                           {s.name}
                         </td>
                         <td
