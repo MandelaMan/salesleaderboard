@@ -120,13 +120,17 @@ const BusinessDevelopment = ({
                 <tbody>
                   {salesMembers
                     .sort((a, b) => b.paid - a.paid)
+                    .sort((a, b) => b.amount - a.amount)
                     .sort((a, b) => a.name - b.name)
                     .map((s, i) => (
                       <tr key={i}>
                         <td width={"45px"}>
                           <ProfilePic picture={s.empID} />
                         </td>
-                        <td style={{ paddingTop: "30px" }} width={"200px"}>
+                        <td
+                          style={{ paddingTop: "30px", fontWeight: "bold" }}
+                          width={"200px"}
+                        >
                           {s.name}
                         </td>
                         <td

@@ -62,12 +62,13 @@ body {
     width: 100%;
 
     h1 {
-      font-size: 2.5em;
+      font-size: 2.2em;
       font-weight: bold;
     }
 
     h2 {
       font-size: 1em;
+      font-weight: bold;
     }
 
     .achvd-paid {
@@ -114,7 +115,7 @@ body {
             color: #fff;
 
             tbody {
-              margin-top: -5%;
+              margin-top: -10%;
 
               tr {
                 td {
@@ -146,7 +147,7 @@ body {
 
           td {
             border: 1px solid transparent;
-            font-size: 1.2em;
+            font-size: 0.95em;
           }
 
           .profile {

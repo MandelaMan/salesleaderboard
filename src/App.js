@@ -92,7 +92,7 @@ const App = () => {
     slideOneData();
     // const timerInterval = setInterval(slideOneData(), 100);
 
-    const timerInterval = setInterval(() => slideOneData(), 1800000);
+    const timerInterval = setInterval(() => slideOneData(), 18000000);
 
     new Swiper(".swiper-div", {
       direction: "horizontal",
