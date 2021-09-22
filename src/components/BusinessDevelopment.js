@@ -124,24 +124,24 @@ const BusinessDevelopment = ({
                     .sort((a, b) => a.name - b.name)
                     .map((s, i) => (
                       <tr key={i}>
-                        <td width={"45px"}>
+                        <td width={"35px"}>
                           <ProfilePic picture={s.empID} />
                         </td>
                         <td
-                          style={{ paddingTop: "30px", fontWeight: "bold" }}
-                          width={"230px"}
+                          style={{ paddingTop: "20px", fontWeight: "bold" }}
+                          width={"1000px"}
                         >
                           {s.name}
                         </td>
                         <td
-                          style={{ paddingTop: "30px" }}
+                          style={{ paddingTop: "20px" }}
                           width={"110px"}
                           className={s.amount < 1 ? `unsuccesful` : `successed`}
                         >
                           <b>$&nbsp;{separator(s.amount)}</b>
                         </td>
                         <td
-                          style={{ paddingTop: "30px" }}
+                          style={{ paddingTop: "20px" }}
                           width={"110px"}
                           className={s.paid < 1 ? `unsuccesful` : `successed`}
                         >
