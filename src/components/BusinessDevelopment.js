@@ -129,20 +129,20 @@ const BusinessDevelopment = ({
                         </td>
                         <td
                           style={{ paddingTop: "30px", fontWeight: "bold" }}
-                          width={"200px"}
+                          width={"230px"}
                         >
                           {s.name}
                         </td>
                         <td
                           style={{ paddingTop: "30px" }}
-                          width={"100px"}
+                          width={"110px"}
                           className={s.amount < 1 ? `unsuccesful` : `successed`}
                         >
                           <b>$&nbsp;{separator(s.amount)}</b>
                         </td>
                         <td
                           style={{ paddingTop: "30px" }}
-                          width={"100px"}
+                          width={"110px"}
                           className={s.paid < 1 ? `unsuccesful` : `successed`}
                         >
                           <b>$&nbsp;{separator(s.paid)}</b>
