@@ -87,7 +87,7 @@ const ClosedBusiness = ({ monthValues }) => {
 
   return (
     <div className="the-bar-chart">
-      <Bar height={500} data={data} options={options} />
+      <Bar height={450} data={data} options={options} />
     </div>
   );
 };
