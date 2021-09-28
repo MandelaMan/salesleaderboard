@@ -79,7 +79,7 @@ const App = () => {
       });
   };
 
-  const slideOneData = () => {
+  const slideOneData = async () => {
     setloading(true);
 
     fetchIndividualTargets();
@@ -90,9 +90,6 @@ const App = () => {
 
   useEffect(() => {
     slideOneData();
-    // const timerInterval = setInterval(slideOneData(), 100);
-
-    const timerInterval = setInterval(() => slideOneData(), 18000000);
 
     new Swiper(".swiper-div", {
       direction: "horizontal",
@@ -117,7 +114,7 @@ const App = () => {
     });
 
     return () => {
-      clearInterval(timerInterval);
+      // clearInterval(timerInterval);
       // console.log("leaving after launching swiper");
     };
 
