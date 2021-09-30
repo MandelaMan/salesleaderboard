@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
-import Swiper from "swiper";
-// import Birthdays from "./components/Birthdays";
-// import Brokers from "./components/Brokers";
 import BusinessDevelopment from "./components/BusinessDevelopment";
+// import Brokers from "./components/Brokers";
+// import Birthdays from "./components/Birthdays";
 // import PreviousMonthBD from "./components/PreviousMonthBD";
+import Slider from "react-slick";
+import LoadScreen from "./components/reusables/LoadScreen";
 
 const App = () => {
-  const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(true);
 
   const [salesMembers, setsalesMembers] = useState([]);
 
@@ -29,6 +30,7 @@ const App = () => {
       .then((data) => {
         const amounts = data.map((item) => Math.round(item.amount));
         setmonthValues(amounts);
+
         setloading(false);
       });
   };
@@ -76,6 +78,8 @@ const App = () => {
         settargetTotal(data.targetAmount);
         settargetAchieved(data.amountAchied);
         setpaidBusiness(data.amountPaid);
+
+        setloading(false);
       });
   };
 
@@ -84,49 +88,43 @@ const App = () => {
 
     fetchIndividualTargets();
     fetchTargets();
-    fetchBarChartData();
     getBestPersonLastMonth();
+    fetchBarChartData();
   };
 
   useEffect(() => {
     slideOneData();
 
-    new Swiper(".swiper-div", {
-      direction: "horizontal",
-      speed: 1,
-      spaceBetween: 0,
-      autoplay: {
-        delay: 5000000,
-      },
-      fadeEffect: { crossFade: true },
-      slidesPerView: 1,
-      on: {
-        slideChange: function () {
-          // slideOneData();
-        },
-      },
-      onSlideChangeEnd: function (s) {
-        console.log(s.slides.length);
-        if (s.slides.length === s.activeIndex + 1) s.swipeTo(0);
-      },
-      effect: "fade",
-      loop: true,
-    });
+    // setInterval(() => {
+    //   slideOneData();
+    // }, 360000);
 
     return () => {
-      // clearInterval(timerInterval);
       // console.log("leaving after launching swiper");
     };
 
     // eslint-disable-next-line
   }, []);
 
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 10000,
+  };
+
   return (
     <>
-      <div className="the-screens">
-        <div className="container-fluid">
-          <div className="swiper-container swiper-div">
-            <div className="swiper-wrapper">
+      <div className="screens">
+        {loading ? (
+          <LoadScreen />
+        ) : (
+          <Slider {...settings}>
+            <div className="slide-screen">
               <BusinessDevelopment
                 salesMembers={salesMembers}
                 targetTotal={targetTotal}
@@ -136,21 +134,12 @@ const App = () => {
                 topPerson={topPerson}
                 loading={loading}
               />
-              {/* <PreviousMonthBD
-                salesMembers={salesMembers}
-                targetTotal={targetTotal}
-                targetAchieved={targetAchieved}
-                paidBusiness={paidBusiness}
-                monthValues={monthValues}
-                topPerson={topPerson}
-              /> */}
-              {/* <Brokers /> */}
-              {/* <div className="swiper-slide">
-                <Birthdays />
-              </div> */}
             </div>
-          </div>
-        </div>
+            {/* <div className="slide-screen">
+              <Brokers />
+            </div> */}
+          </Slider>
+        )}
       </div>
     </>
   );

@@ -49,7 +49,6 @@ const BusinessDevelopment = ({
                 </div>
                 <div className="person-data">
                   <h2>
-                    {/* <b>Florence Wanyoike</b> */}
                     <b>{topPerson.name}</b>
                   </h2>
                 </div>
@@ -93,9 +92,17 @@ const BusinessDevelopment = ({
               <h2>
                 <u>Days to Target Expiry</u>
               </h2>
-              <h1 className="successed">
+
+              {remainingDays() > 5 && (
+                <h1 className="successed">
+                  &nbsp;Day{remainingDays() > 1 && "s"}
+                </h1>
+              )}
+
+              {remainingDays() < 1 && <h1 className="unsuccesful">Last day</h1>}
+              {/* <h1 className="successed">
                 {remainingDays()}&nbsp;Day{remainingDays() > 1 ? "s" : ""}
-              </h1>
+              </h1> */}
             </div>
           </div>
         </div>
@@ -119,8 +126,8 @@ const BusinessDevelopment = ({
                 </thead>
                 <tbody>
                   {salesMembers
-                    .sort((a, b) => b.paid - a.paid)
                     .sort((a, b) => b.amount - a.amount)
+                    .sort((a, b) => b.paid - a.paid)
                     .sort((a, b) => a.name - b.name)
                     .map((s, i) => (
                       <tr key={i}>
@@ -129,7 +136,7 @@ const BusinessDevelopment = ({
                         </td>
                         <td
                           style={{ paddingTop: "20px", fontWeight: "bold" }}
-                          width={"1000px"}
+                          width={"1300px"}
                         >
                           {s.name}
                         </td>

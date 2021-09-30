@@ -1,5 +1,4 @@
 @import "~bootstrap/scss/bootstrap";
-@import "~swiper/css/swiper.css";
 
 $primary-green: #00d25b;
 $light-primary-text: #008deb;
@@ -30,36 +29,81 @@ body {
   font-family: "Rubik", sans-serif;
 }
 
-.the-screens {
-  // padding-top: 1%;
+.screens {
   width: 100%;
   height: 100vh;
+  padding: 0.5%;
 
-  .swiper-container {
-    width: 100%;
-    height: 100vh;
-    padding: 1% 0.5%;
+  .load-screen {
+    display: grid;
+    place-items: center;
+
+    .loading {
+      width: 50%;
+      height: 30vh;
+      display: grid;
+      place-items: center;
+
+      h1 {
+        font-weight: bold;
+        font-size: 7em;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+
+        span {
+          animation: flash 1.2s linear infinite;
+        }
+      }
+
+      @keyframes flash {
+        0% {
+          color: #fff900;
+          text-shadow: 0 0 7px #fff900 0 0 50px #ff6c00;
+        }
+        10% {
+          color: #fff900;
+          text-shadow: 0 0 7px #fff900 0 0 50px #ff6c00;
+        }
+        90% {
+          color: #484848;
+          text-shadow: none;
+        }
+        100% {
+          color: #484848;
+          text-shadow: none;
+        }
+      }
+
+      // @for $i from 1 through 10{
+      //   h1 span:nth-child(#{$i}){
+      //     animation-delay: ;
+      //   }
+      // }
+    }
   }
 
-  .dashboard-vector-map {
-    width: 500px;
-  }
+  .slide-screen {
+    width: 100% !important;
+    height: 95vh;
 
-  .the-bar-chart {
-    width: 100%;
-    height: 700px;
-  }
+    .dashboard-vector-map {
+      width: 500px;
+    }
 
-  .unsuccesful {
-    color: #fc424a !important;
-  }
+    .the-bar-chart {
+      width: 100%;
+      height: 700px;
+    }
 
-  .successed {
-    color: $primary-green;
-  }
+    .unsuccesful {
+      color: #fc424a !important;
+    }
 
-  .swiper-slide {
-    width: 100%;
+    .successed {
+      color: $primary-green;
+    }
 
     h1 {
       font-size: 2.5em;
@@ -86,20 +130,25 @@ body {
           // display: grid;
           // place-items: center;
 
-          .star {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            text-align: right;
-            padding-top: 25%;
-          }
-
           .profile {
             position: absolute;
             width: 75%;
             height: 70%;
             border-radius: 50%;
             border: 1px solid #ffd700;
+          }
+
+          .star {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: right;
+            padding-top: 25%;
+
+            img {
+              padding-top: 2%;
+              float: right;
+            }
           }
         }
 
@@ -147,7 +196,7 @@ body {
 
           td {
             border: 1px solid transparent;
-            font-size: 1em;
+            font-size: 1.15em;
           }
 
           .profile {

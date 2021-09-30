@@ -7,6 +7,8 @@ import "popper.js";
 import "bootstrap/dist/css/bootstrap.css";
 
 import "./css/mobile.scss";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
   <BrowserRouter basename="/">
