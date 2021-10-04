@@ -74,7 +74,13 @@ const BusinessDevelopment = ({
               <h2>
                 <u>Paid business</u>
               </h2>
-              <h1 className="successed">$&nbsp;{separator(paidBusiness)}</h1>
+              <h1
+                className={`${
+                  targetTotal - targetAchieved > 1 ? "unsuccesful" : "successed"
+                }`}
+              >
+                $&nbsp;{separator(paidBusiness)}
+              </h1>
             </div>
           </div>
           <div className="row achvd-paid">
@@ -92,17 +98,13 @@ const BusinessDevelopment = ({
               <h2>
                 <u>Days to Target Expiry</u>
               </h2>
-
-              {remainingDays() > 5 && (
+              {remainingDays() > 1 && (
                 <h1 className="successed">
-                  &nbsp;Day{remainingDays() > 1 && "s"}
+                  {remainingDays()}&nbsp;Day{remainingDays() > 1 && "s"}
                 </h1>
               )}
 
               {remainingDays() < 1 && <h1 className="unsuccesful">Last day</h1>}
-              {/* <h1 className="successed">
-                {remainingDays()}&nbsp;Day{remainingDays() > 1 ? "s" : ""}
-              </h1> */}
             </div>
           </div>
         </div>
