@@ -13,15 +13,15 @@ const BusinessDevelopment = ({
   monthValues,
   topPerson,
 }) => {
-  const date = new Date();
-
   const getMonthName = () => {
+    const date = new Date();
     const month = date.toLocaleString("default", { month: "long" });
 
     return month;
   };
 
   const getPreviousMonth = () => {
+    const date = new Date();
     date.setMonth(date.getMonth() - 1);
     const previousMonth = date.toLocaleString("default", { month: "long" });
 
