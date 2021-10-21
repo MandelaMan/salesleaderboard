@@ -13,6 +13,21 @@ const BusinessDevelopment = ({
   monthValues,
   topPerson,
 }) => {
+  const date = new Date();
+
+  const getMonthName = () => {
+    const month = date.toLocaleString("default", { month: "long" });
+
+    return month;
+  };
+
+  const getPreviousMonth = () => {
+    date.setMonth(date.getMonth() - 1);
+    const previousMonth = date.toLocaleString("default", { month: "long" });
+
+    return previousMonth;
+  };
+
   return (
     <div className="swiper-slide">
       <div className="row px-2">
@@ -34,7 +49,7 @@ const BusinessDevelopment = ({
           <div className="row">
             <div className="col-md-12">
               <h2>
-                <u>Top Sales Member for August</u>
+                <u>Top Sales Member for {getPreviousMonth()}</u>
               </h2>
             </div>
           </div>
@@ -58,7 +73,9 @@ const BusinessDevelopment = ({
           <div className="row">
             <div className="col-md-12">
               <h2>
-                <u>Broker/Direct Overall Set Target for September 2021</u>
+                <u>
+                  Broker/Direct Overall Set Target for {getMonthName()} 2021
+                </u>
               </h2>
               <h1 className="successed">$&nbsp;{separator(targetTotal)}</h1>
             </div>
@@ -112,7 +129,10 @@ const BusinessDevelopment = ({
           <div className="row">
             <div className="col-md-12">
               <h2>
-                <u>Business Development Individual Target for September 2021</u>
+                <u>
+                  Business Development Individual Target for {getMonthName()}
+                  &nbsp;2021
+                </u>
               </h2>
             </div>
           </div>
