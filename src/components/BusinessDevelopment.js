@@ -20,6 +20,12 @@ const BusinessDevelopment = ({
     return month;
   };
 
+  const getYear = () => {
+    const year = new Date().getFullYear();
+
+    return year;
+  };
+
   const getPreviousMonth = () => {
     const date = new Date();
     date.setMonth(date.getMonth() - 1);
@@ -49,7 +55,9 @@ const BusinessDevelopment = ({
           <div className="row">
             <div className="col-md-12">
               <h2>
-                <u>Top Sales Member for {getPreviousMonth()}</u>
+                <u>
+                  Top Sales Member for {getPreviousMonth()}&nbsp;{getYear()}
+                </u>
               </h2>
             </div>
           </div>
@@ -74,7 +82,8 @@ const BusinessDevelopment = ({
             <div className="col-md-12">
               <h2>
                 <u>
-                  Broker/Direct Overall Set Target for {getMonthName()} 2021
+                  Broker/Direct Overall Set Target for {getMonthName()}&nbsp;
+                  {getYear()}
                 </u>
               </h2>
               <h1 className="successed">$&nbsp;{separator(targetTotal)}</h1>
@@ -131,7 +140,7 @@ const BusinessDevelopment = ({
               <h2>
                 <u>
                   Business Development Individual Target for {getMonthName()}
-                  &nbsp;2021
+                  &nbsp;{getYear()}
                 </u>
               </h2>
             </div>
@@ -161,6 +170,7 @@ const BusinessDevelopment = ({
                           width={"1300px"}
                         >
                           {s.name}
+                          {/* {s.salesPerson} */}
                         </td>
                         <td
                           style={{ paddingTop: "20px" }}

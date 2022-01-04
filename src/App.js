@@ -65,6 +65,8 @@ const App = () => {
         settopPerson(top);
 
         setloading(false);
+
+        console.log(data);
       });
   };
 
