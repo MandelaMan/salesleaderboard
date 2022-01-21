@@ -34,6 +34,14 @@ const BusinessDevelopment = ({
     return previousMonth;
   };
 
+  const getPreviousYear = () => {
+    const currentYear = new Date().getFullYear(); // 2020
+
+    const previousYear = currentYear - 1;
+
+    return previousYear;
+  };
+
   return (
     <div className="swiper-slide">
       <div className="row px-2">
@@ -56,7 +64,8 @@ const BusinessDevelopment = ({
             <div className="col-md-12">
               <h2>
                 <u>
-                  Top Sales Member for {getPreviousMonth()}&nbsp;{getYear()}
+                  Top Sales Member for {getPreviousMonth()}&nbsp;
+                  {getPreviousYear()}
                 </u>
               </h2>
             </div>
