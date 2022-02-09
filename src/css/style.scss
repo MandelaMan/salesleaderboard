@@ -90,6 +90,7 @@ body {
   }
 
   .slide-screen {
+    margin-top: 3%;
     width: 100% !important;
     height: 95vh;
 
@@ -148,7 +149,7 @@ body {
             width: 100%;
             height: 100%;
             text-align: right;
-            padding-top: 20%;
+            padding-top: 5%;
 
             img {
               padding-top: 2%;
@@ -158,11 +159,22 @@ body {
         }
 
         .person-data {
-          padding: 7% 2%;
+          padding: 1% 2%;
           width: 70%;
 
           h2 {
-            font-size: 1.6em;
+            display: flex;
+            font-size: 1.5em;
+          }
+
+          h3 {
+            span {
+              font-size: 0.45em;
+              font-weight: bold;
+              text-decoration: underline;
+            }
+
+            font-size: 2.1em;
           }
 
           .table {

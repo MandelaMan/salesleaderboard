@@ -62,15 +62,17 @@ const App = () => {
 
         top = top[0];
 
+        console.log(top);
+
         settopPerson(top);
 
         setloading(false);
-
-        console.log(data);
       });
   };
 
   const fetchTargets = () => {
+    !loading && setloading(true);
+
     fetch(
       "https://portal.micglobalrisks.com:8082/leaderboard/api/targets"
       // "https://portal.micglobalrisks.com:8082/leaderboard/api/prev-month-targets"
