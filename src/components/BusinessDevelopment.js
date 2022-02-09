@@ -83,6 +83,37 @@ const BusinessDevelopment = ({
                   <h2>
                     <b>{topPerson.name}</b>
                   </h2>
+                  <div className="row">
+                    <div className="col-md-6">
+                      <h3>
+                        <span>Booked business</span>
+                        <br />
+                        <b>
+                          $&nbsp;
+                          {topPerson.amount > 0
+                            ? separator(topPerson.amount)
+                            : topPerson.amount}
+                        </b>
+                      </h3>
+                    </div>
+                    <div className="col-md-6">
+                      <h3>
+                        <span>Paid business</span>
+                        <br />
+                        <b>
+                          $&nbsp;
+                          {topPerson.paid > 0
+                            ? separator(topPerson.paid)
+                            : topPerson.paid}
+                        </b>
+                      </h3>
+                    </div>
+                  </div>
+                  {/* <h3>
+                    <span>Paid business</span>
+                    <br />
+                    <b>$&nbsp;{separator(topPerson.paid)}</b>
+                  </h3> */}
                 </div>
               </div>
             </div>
