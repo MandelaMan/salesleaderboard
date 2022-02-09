@@ -83,15 +83,6 @@ const BusinessDevelopment = ({
                   <h2>
                     <b>{topPerson.name}</b>
                   </h2>
-                  <h3>
-                    <span>Booked business</span>
-                    <br />
-                    {/* <b>$&nbsp;{separator(topPerson.paid)}</b> */}
-                  </h3>
-                  {/* <h3>
-                    <span>Paid business</span>
-                    <b>$&nbsp;{separator(topPerson.paid)}</b>
-                  </h3> */}
                 </div>
               </div>
             </div>
