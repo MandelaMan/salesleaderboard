@@ -86,7 +86,7 @@ const BusinessDevelopment = ({
                   <h3>
                     <span>Booked business</span>
                     <br />
-                    <b>$&nbsp;{separator(topPerson.paid)}</b>
+                    {/* <b>$&nbsp;{separator(topPerson.paid)}</b> */}
                   </h3>
                   {/* <h3>
                     <span>Paid business</span>
