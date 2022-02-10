@@ -86,7 +86,7 @@ const BusinessDevelopment = ({
                   <div className="row">
                     <div className="col-md-6">
                       <h3>
-                        <span>Booked business</span>
+                        <span>Booked</span>
                         <br />
                         <b>
                           $&nbsp;
@@ -98,7 +98,7 @@ const BusinessDevelopment = ({
                     </div>
                     <div className="col-md-6">
                       <h3>
-                        <span>Paid business</span>
+                        <span>Paid</span>
                         <br />
                         <b>
                           $&nbsp;
